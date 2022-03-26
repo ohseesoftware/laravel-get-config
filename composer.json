@@ -1,11 +1,12 @@
 {
-    "name": "ohseesoftware/laravel-package-boilerplate",
-    "description": "Describe your package here.",
+    "name": "ohseesoftware/laravel-get-config",
+    "description": "Returns the config value for the given key.",
     "keywords": [
         "ohseesoftware",
-        "laravel"
+        "laravel",
+        "config"
     ],
-    "homepage": "https://github.com/ohseesoftware/laravel-package-boilerplate",
+    "homepage": "https://github.com/ohseesoftware/laravel-get-config",
     "license": "MIT",
     "type": "library",
     "authors": [
@@ -15,22 +16,25 @@
         }
     ],
     "require": {
-        "php": "^8.0"
+        "php": "^8.0",
+        "illuminate/config": "^9.5",
+        "illuminate/console": "^9.5",
+        "illuminate/support": "^9.5"
     },
     "require-dev": {
-        "orchestra/testbench": "^6.7",
+        "orchestra/testbench": "^7.2",
         "php-coveralls/php-coveralls": "^2.4",
         "phpunit/phpunit": "^9.5",
         "squizlabs/php_codesniffer": "*"
     },
     "autoload": {
         "psr-4": {
-            "OhSeeSoftware\\LaravelServerAnalytics\\": "src"
+            "OhSeeSoftware\\LaravelGetConfig\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "OhSeeSoftware\\LaravelServerAnalytics\\Tests\\": "tests"
+            "OhSeeSoftware\\LaravelGetConfig\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -41,13 +45,6 @@
         "sort-packages": true
     },
     "extra": {
-        "laravel": {
-            "providers": [
-                "OhSeeSoftware\\LaravelServerAnalytics\\LaravelServerAnalyticsServiceProvider"
-            ],
-            "aliases": {
-                "LaravelServerAnalytics": "OhSeeSoftware\\LaravelServerAnalytics\\ServerAnalytics"
-            }
-        }
+        "laravel": {}
     }
 }

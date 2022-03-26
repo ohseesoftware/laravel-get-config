@@ -1,18 +1,9 @@
 <?php
 
-namespace OhSeeSoftware\LaravelPackageBoilerplate\Tests;
+namespace OhSeeSoftware\LaravelGetConfig\Tests;
 
-use OhSeeSoftware\LaravelPackageBoilerplate\ExampleServiceProvider;
+use OhSeeSoftware\LaravelGetConfig\GetConfigServiceProvider;
 
-class TestServiceProvider extends ExampleServiceProvider
+class TestServiceProvider extends GetConfigServiceProvider
 {
-    /**
-     * Bootstrap the application services.
-     */
-    public function boot()
-    {
-        parent::boot();
-
-        $this->loadRoutesFrom(__DIR__ . '/routes/test-routes.php');
-    }
 }

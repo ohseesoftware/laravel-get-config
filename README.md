@@ -1,31 +1,27 @@
-# Laravel Package Boilerplate
+# Laravel Get Config
 
-[![Current Release](https://img.shields.io/github/release/ohseesoftware/laravel-package-boilerplate.svg?style=flat-square)](https://github.com/ohseesoftware/laravel-package-boilerplate/releases)
-![Build Status Badge](https://github.com/ohseesoftware/laravel-package-boilerplate/workflows/Build/badge.svg)
-[![Coverage Status](https://coveralls.io/repos/github/ohseesoftware/laravel-package-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/ohseesoftware/laravel-package-boilerplate?branch=master)
-[![Maintainability Score](https://img.shields.io/codeclimate/maintainability/ohseesoftware/laravel-package-boilerplate.svg?style=flat-square)](https://codeclimate.com/github/ohseesoftware/laravel-package-boilerplate)
-[![Downloads](https://img.shields.io/packagist/dt/ohseesoftware/laravel-package-boilerplate.svg?style=flat-square)](https://packagist.org/packages/ohseesoftware/laravel-package-boilerplate)
-[![MIT License](https://img.shields.io/github/license/ohseesoftware/laravel-package-boilerplate.svg?style=flat-square)](https://github.com/ohseesoftware/laravel-package-boilerplate/blob/master/LICENSE)
+A simple artisan command to return the value for a given config key. Supports nested retrieval and object export.
 
-## TODO:
+## Use case
 
--   Search and replace "laravel-package-boilerplate" with the name of the new package
--   Search and replace "OhSeeSoftware\LaravelPackageBoilerplate" with the namespace of the new package
--   Change the names of the example classes (ExampleServiceProvider, ExampleFacade, etc)
+You're probably thinking, "Why do I need this?". To be fair, you probably don't. However, there are a few cases where retrieving config values via a command can make life easier:
 
-### Coverage reporting
+- Running Laravel in a serverless environment
+- Running Laravel in a PaaS (Platform as a Service, ie: Heroku, etc)
 
--   If you want to report on code coverage, setup the repo at [https://coveralls.io](https://coveralls.io)
--   Update the Coveralls image URL in this README file
+In a typical self-hosted Laravel application, you can SSH into your server and run `php artisan tinker`, and then `config($key)`.
 
-### Maintainability score
+This is not possible in serverless environment (Vapor), as there's no machine to SSH into. In a PaaS, it is usually possible, although can be a bit inconvenient.
 
--   If you want to report on code maintainability, setup the repo at [https://codeclimate.com](https://codeclimate.com)
--   Update the Code Climate image URL in this README file
+## Usage
 
-### Write documentation
+If you have access to running commands for your Laravel application, simply run:
 
--   Remove this TODO section and replace with documentation for your package!
+```bash
+php artisan config:get KEY
+```
+
+Where KEY can be a dot notation config key value: `database` or `database.connections.mysql`, etc.
 
 ## Changelog
 
